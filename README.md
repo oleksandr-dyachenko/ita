@@ -3,7 +3,7 @@
 To start your Phoenix server:
   * Install `Erlang/OTP`, `Elixir`, `Phoenix`, `Nodejs`, `Webpack`, `Git`
   * Clone repo with `git clone https://github.com/oleksandr-dyachenko/ita.git` 
-  * Install dependencies with `mix deps.get && npm install`
+  * Install dependencies with `mix deps.get; cd ./assets && npm install`
   * Start Phoenix endpoint with `mix phx.server` or `iex -S mix phx.server`
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
