@@ -1,4 +1,4 @@
-# Ita
+# ITA
 
 To start your Phoenix server:
   * Install `Erlang/OTP`, `Elixir`, `Phoenix`, `Nodejs`, `Webpack`, `Git`
