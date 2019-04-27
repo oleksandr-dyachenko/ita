@@ -1,0 +1,37 @@
+<h1>
+  <%= @auto["marka"] %>
+  <%= @auto["model"] %>
+  <%= @auto["version"] %>
+</h1>
+
+<img src='https://cdn.riastatic.com/photos/<%= @auto["photo"] %>f.jpg'/>
+
+<h3>
+  Ціна: <%= round(@auto["price"]) %> грн
+</h3>
+<h4>Контакти</h4>
+<ul>
+  <li><%= @auto["user"] %></li>
+  <li>
+    <a href='call:<%= @auto["phone"] %>'>
+      <%= @auto["phone"] %>
+    </a>
+  </li>
+  <li>
+    <a href='mailto:<%= @auto["email"] %>'>
+      <%= @auto["email"] %>
+    </a>
+  </li>
+  <li><%= @auto["register_date"] %></li>
+</ul>
+
+<div>
+  <a href='/auto/<%= @random_auto["auto_id"] %>'>
+    Далее
+  </a>
+</div>
+<div>
+  <a href="/search">
+    На пошук
+  </a>
+</div>

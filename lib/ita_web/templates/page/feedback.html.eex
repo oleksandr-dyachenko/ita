@@ -1,0 +1,17 @@
+<h1>FEEDBACK</h1>
+
+<form method="POST" action="/feedback">
+  <input 
+    type="text" 
+    name="name" 
+    placeholder="Your name ..." />
+  <textarea name="feedback"></textarea>
+  <input 
+    type="number" 
+    min="1" 
+    max="5" 
+    step="1" 
+    value="5" 
+    name="rate" />
+  <input type="submit" />
+</form>

@@ -1,0 +1,40 @@
+<h1>Search:</h1>
+
+<form>
+  <select name="mark_id">
+    <%= for mark <- @marks do %>
+      <option value='<%= mark["mark_id"] %>' <%= if @params["mark_id"] == "#{mark["mark_id"]}" do %>selected<% end %>>
+        <%= mark["name"] %>
+      </option>
+    <% end %>
+  </select>
+
+  <input type="text" name="text" value='<%= @params["text"] %>' placeholder="Brand / Model / Version" />
+  <input type="number" step="100" min="0" name="price_from" value='<%= @params["price_from"] %>' placeholder="Price from" />
+  <input type="number" step="100" min="0" name="price_till" value='<%= @params["price_till"] %>' placeholder="Price till"/>
+  <input type="submit">
+</form>
+
+
+<%= for auto <- @autos do %>
+  <div>
+    <a href='/auto/<%= auto["auto_id"] %>'>
+      <%= if auto["photo"] do %>
+        <img src='https://cdn.riastatic.com/photos/<%= auto["photo"] %>m.jpg' />
+      <% else %>
+        <img 
+          width="185" 
+          src='https://img6.auto.ria.com/images/nophoto/no-photo-295x195.jpg'
+        />
+      <% end %>    
+      <h3>
+        <%= auto["marka"] %>
+        <%= auto["model"] %>
+        <%= auto["version"] %>
+      </h3>
+    </a>
+    <span>
+      <%= round(auto["price"]) %> грн
+    </span>
+  </div>
+<% end %>
