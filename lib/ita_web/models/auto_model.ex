@@ -35,7 +35,7 @@ defmodule ItaWeb.AutoModel do
     )
   end
 
-  def get_random_auto() do
+  def get_random_auto(limit \\ 1) do
     query("SELECT *,
         marks.name AS marka,
         models.name AS model,
@@ -45,7 +45,7 @@ defmodule ItaWeb.AutoModel do
       JOIN models USING (model_id)
       JOIN users USING (user_id)
       ORDER BY RAND()
-      LIMIT 1")
+      LIMIT ?", [limit])
   end
 
   def getMarks() do

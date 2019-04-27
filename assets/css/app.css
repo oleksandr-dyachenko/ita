@@ -5,5 +5,9 @@
     width: 50%;
 }
 
+.column-3 li {
+    float: left;
+    width: 33%;
+}
 
 @import "./phoenix.css";

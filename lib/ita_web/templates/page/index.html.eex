@@ -9,7 +9,7 @@
   <p>A productive web framework that<br/>does not compromise speed or maintainability.</p>
 </section>
   
-  <ul class='column-2'>
+  <ul class='column-3'>
     <%= for top_search <- @top_searches do %>
       <li>
         <a href='/search?mark_id=<%= top_search["mark_id"] %>&text=<%= top_search["model_name"] %>&price_from=&price_till='>
@@ -18,6 +18,17 @@
           (<%= top_search["cnt"] %>)
         </a>
       </li>
+    <% end %>
+  </ul>
+
+  <ul class="column-3">
+    <%= for auto <- @top_auto do %>
+    <li>
+      <a href='/auto/<%= auto["auto_id"] %>'>
+        <img src='https://cdn.riastatic.com/photos/<%= auto["photo"] %>s.jpg'>
+        <span><%= auto["marka"] %> <%= auto["model"] %></span>
+      </a>
+    </li>
     <% end %>
   </ul>
 

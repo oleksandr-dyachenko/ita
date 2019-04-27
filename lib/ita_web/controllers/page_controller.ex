@@ -4,12 +4,12 @@ defmodule ItaWeb.PageController do
 
   def index(conn, _params) do
     top_searches = AutoModel.getTopSearches()
-    top_auto = AutoModel.get_random_auto()
+    top_auto = AutoModel.get_random_auto(3)
 
     render(conn, "index.html", %{
       top_searches: top_searches,
       top_auto: top_auto
-    } |> IO.inspect)
+    })
   end
 
   def contacts(conn, _params) do
