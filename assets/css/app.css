@@ -1,3 +1,9 @@
 /* This file is for your main application css. */
 
+.column-2 li {
+    float: left;
+    width: 50%;
+}
+
+
 @import "./phoenix.css";

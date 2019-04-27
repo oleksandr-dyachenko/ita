@@ -98,4 +98,20 @@ defmodule ItaWeb.AutoModel do
       LIMIT 10")
   end
  
+  def getTopSearches() do
+    query(
+      "select 
+        *,
+        marks.name AS mark_name,
+        models.name AS model_name,
+        count(*) AS cnt
+      from auto
+      join marks using(mark_id)
+      join models using(mark_id, model_id)
+      group by model_id
+      order by cnt desc
+      limit 12"
+    )
+  end
+
 end

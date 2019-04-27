@@ -8,6 +8,18 @@
 
   <p>A productive web framework that<br/>does not compromise speed or maintainability.</p>
 </section>
+  
+  <ul class='column-2'>
+    <%= for top_search <- @top_searches do %>
+      <li>
+        <a href='/search?mark_id=<%= top_search["mark_id"] %>&text=<%= top_search["model_name"] %>&price_from=&price_till='>
+          <%= top_search["mark_name"] %>
+          <%= top_search["model_name"] %>
+          (<%= top_search["cnt"] %>)
+        </a>
+      </li>
+    <% end %>
+  </ul>
 
 <section class="row">
   <article class="column">
